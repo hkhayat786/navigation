@@ -5,11 +5,18 @@
     box-sizing: border-box;
  
 }
-
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 html{
     font-size: 16px;
 }
 nav{
+    width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -51,6 +58,19 @@ nav{
     overflow: hidden;
 }
 
+.nav-active{
+    transform: translateX(0%);
+  }
+  .toggle .line-1{
+     transform: rotate(-45deg) translate(-5px,6px);
+  }
+  .toggle .line-2{
+      opacity: 0;
+ }
+ .toggle .line-3{
+      transform: rotate(45deg) translate(-5px,-6px);
+ }
+
 @media only screen and (max-width:1024px){
     .nav-links{
         width: 50%;
@@ -73,7 +93,7 @@ nav{
         align-items: center;
         transform:translateX(100%);
         transition: transform 0.5s ease-in;
-        overflow: hidden;
+        overflow-x: hidden;
     }
     
     .burger{
@@ -81,16 +101,3 @@ nav{
         
     }
 }
-
-    .nav-active{
-       transform: translateX(0%);
-     }
-     .toggle .line-1{
-        transform: rotate(-45deg) translate(-5px,6px);
-     }
-     .toggle .line-2{
-         opacity: 0;
-    }
-    .toggle .line-3{
-         transform: rotate(45deg) translate(-5px,-6px);
-    }
